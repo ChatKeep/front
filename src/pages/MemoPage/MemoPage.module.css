@@ -1,0 +1,30 @@
+.container {
+  flex: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftSection {
+  width: 15vw;
+  min-width: 160px;
+  height: 100vh;
+}
+.rightSection {
+  width: 85vw;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex: 1 1 auto;
+}
+.folderContainer {
+  flex: auto;
+  max-width: 302px;
+  height: 100vh;
+}
+.memoContainer {
+  flex: auto;
+  height: 100vh;
+}

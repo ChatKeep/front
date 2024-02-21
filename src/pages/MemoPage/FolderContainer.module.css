@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.label {
+  border-bottom: 1px solid #e7e7e9;
+  border-top: 1px solid #e7e7e9;
+  padding: 10px;
+  color: #ec60c5;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  padding: 10px;
+  margin: 2px;
+  border-radius: 5px;
+  background-color: #f6f6f6;
+}
+.listItem_un {
+  padding: 10px;
+
+  margin: 2px;
+  border-radius: 5px;
+}
+.itemHeader {
+  font-weight: 500;
+  padding-bottom: 2px;
+}
+.itemContent {
+  padding-bottom: 2px;
+  color: #898989;
+}
+.itemDate {
+  padding-bottom: 2px;
+  color: #898989;
+}
