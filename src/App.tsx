@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
-import { Reset } from "styled-reset";
+import { Routes, Route } from "react-router";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import MemoPage from "./pages/MemoPage/MemoPage";
+
 function App() {
   return (
-    <>
-      <Reset />
-      <div>hi</div>
-    </>
+    <Routes>
+      <Route index element={<LoginPage />}></Route>
+      <Route path="/memoPage" element={<MemoPage />}></Route>
+    </Routes>
   );
 }
 
