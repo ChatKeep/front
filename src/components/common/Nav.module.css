@@ -17,6 +17,11 @@
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 600;
+  cursor: pointer;
+}
+.new:hover {
+  background-color: #f0f0f0; /* 배경색 변경 예시 */
+  color: #333; /* 글자색 변경 예시 */
 }
 
 .label {

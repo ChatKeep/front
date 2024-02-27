@@ -16,7 +16,7 @@ const Nav = () => {
       <div className={styles.logo}>
         <img src={logo} alt="Nav Logo" />
       </div>
-      <div className={styles.new}>
+      <div className={styles.new} onClick={() => console.log("추가ㅏ")}>
         <LuPlus size={13} /> New Note
       </div>
       <div className={styles.label}>
