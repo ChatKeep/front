@@ -6,23 +6,25 @@ import logo from "../../assets/images/navLogo.png";
 import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const navigate = useNavigate();
-  const loginKakao = async () => {
-    try {
-      const { url } = await (
-        await fetch("http://localhost:8080/users/login")
-      ).json();
 
-      console.log(url); // 응답으로 온 url
-      document.location.href = url;
+  async function fetchKakaoLoginUrl() {
+    try {
+      const response = await fetch("http://localhost:8080/api/auth");
+      const data = await response.json(); // Assuming the backend sends a proper JSON response
+      if (data.url) {
+        console.log(data.url); // Use the URL as needed, e.g., redirecting the user
+        window.location.href = data.url;
+      } else {
+        console.error("URL not received from backend");
+      }
     } catch (error) {
-      alert("Function fetchGetURL error!");
-      console.error(error);
+      console.error("Error fetching Kakao login URL:", error);
     }
-  };
+  }
 
   const REST_API_KEY = process.env.REACT_APP_REST_API_KEY;
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
-  const REDIRECT_URI = "http://localhost:8080/users/callback";
+  const REDIRECT_URI = "http://localhost:8080/api/auth/kakao";
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`;
 
   return (
@@ -37,7 +39,7 @@ const LoginPage = () => {
           <img className={styles.logoImage} src={logoImage} alt="logoImage" />
           <h2>카카오톡으로 로그인</h2>
           <div className={styles.loginButton}>
-            <button onClick={loginKakao}>
+            <button onClick={fetchKakaoLoginUrl}>
               <img src={loginImage} alt="kako Login" />
             </button>
           </div>
